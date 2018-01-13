@@ -7,7 +7,8 @@ from . import views
 
 router = DefaultRouter()
 router.register('hello-viewset', views.HelloViewSet, base_name='hello-viewset')
-
+router.register('profile', views.UserProfileViewSet)
+# dont need specify base_name 'cause django do it for us'
 urlpatterns= [
     url(r'^hello-view/', views.HelloApiView.as_view()),
     url(r'', include(router.urls))
